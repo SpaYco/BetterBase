@@ -1,0 +1,8 @@
+{
+  "short_name": "BetterBase",
+  "name": "A better table for metabase questions",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
