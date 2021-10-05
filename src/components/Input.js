@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 
-const Input = ({ setData }) => {
+const Input = ({ updateData }) => {
   const onReaderLoad = (event) => {
     const data = JSON.parse(event.target.result);
-    setData(data);
+    updateData({
+      data: data.map((item) => ({
+        ...item, key: uuidv4(),
+      })),
+      keys: Object.keys(data[0]),
+    });
   };
   const inputChangeHandler = (event) => {
     const reader = new FileReader();
@@ -14,7 +20,7 @@ const Input = ({ setData }) => {
 };
 
 Input.propTypes = {
-  setData: PropTypes.func.isRequired,
+  updateData: PropTypes.func.isRequired,
 };
 
 export default Input;
