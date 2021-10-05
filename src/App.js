@@ -18,10 +18,8 @@ const App = () => {
 
   return (
     <ThemeProvider theme={{}}>
-      <div id="root">
-        <Input updateData={updateData} />
-        <TableGenerator data={data} keys={keys} />
-      </div>
+      <Input updateData={updateData} />
+      <TableGenerator data={data} keys={keys} />
     </ThemeProvider>
   );
 };
