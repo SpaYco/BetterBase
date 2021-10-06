@@ -8,6 +8,20 @@ A web page that can take JSON files (mainly from [MetaBase](https://metabase.com
 - VSCode
 - [Ant Design](https://ant.design/)
 
+# How to make changes
+
+- Clone this repo
+- Run `npm install` to install all required packages
+- Run `npm start` to run a dev server so you can see all changes you do live
+  - This is a React app, please check how to [get started](https://reactjs.org/docs/getting-started.html) to learn how you can work with this repo
+- Run `npm run build` to make a production build that would perform better and have less file size.
+
+# Live Link
+
+[Live Link](https://betterbase.netlify.app/)
+
+*You can use this live link to work with your JSON files without having to clone the repo*
+
 
 # Why not use MetaBase's own features?
 MetaBase is great! it does help you go through data on a database and query what you need, but if you need to search through that query, you need to add even more queries, which makes it fetch the data again, it takes longer than it should, so just taking that data (by downloading a JSON file) and using it here will make it much simpler!
