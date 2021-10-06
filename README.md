@@ -28,7 +28,7 @@ While this project focuses mainly on MetaBase, you can also use files generated 
           "name": "Dude",
           "age": 28,
           "hobbies": null // since Guy have a "hobbies" key, Dude should also have one, if here's no data to add, we use null 
-        }
+        },
         {
           "name": "Guy",
           "age": 25, 
@@ -42,7 +42,7 @@ While this project focuses mainly on MetaBase, you can also use files generated 
         {
           "name": "Dude",
           "age": 28
-        }
+        },
         {
           "name": "Guy",
           "age": 25
@@ -56,12 +56,27 @@ While this project focuses mainly on MetaBase, you can also use files generated 
         {
           "name": "Dude",
           "age": 28
-        }
+        },
         {
           "name": "Guy",
           "age": 28,
           "hobbies": "NPC" // there's a key that doesn't exist in the other object, it may work but you won't get all results.
         }
+      ]
+      ```
+    
+      ```json
+      [ 
+        {
+          "name": "Dude",
+          "age": 28
+        },
+        [ // All elements of the main array should be objects.
+          {
+          "name": "Guy",
+          "age": 28,
+          }
+        ]
       ]
       ```
 
