@@ -22,7 +22,7 @@ While this project focuses mainly on MetaBase, you can also use files generated 
   - Download a JSON file from a MetaBase question
   - Get a JSON file elsewhere that is an array of objects, that uses the same keys on all objects.
     - Good ✅
-      ```json
+      ```js
       [ 
         {
           "name": "Dude",
@@ -37,7 +37,7 @@ While this project focuses mainly on MetaBase, you can also use files generated 
       ]
       ```
       
-      ```json
+      ```js
       [ 
         {
           "name": "Dude",
@@ -51,7 +51,7 @@ While this project focuses mainly on MetaBase, you can also use files generated 
       ```
     - Bad ❌
     
-      ```json
+      ```js
       [ 
         {
           "name": "Dude",
@@ -65,7 +65,7 @@ While this project focuses mainly on MetaBase, you can also use files generated 
       ]
       ```
     
-      ```json
+      ```js
       [ 
         {
           "name": "Dude",
@@ -79,6 +79,9 @@ While this project focuses mainly on MetaBase, you can also use files generated 
         ]
       ]
       ```
+      *P.S: You can't actually have comments on JSON, these are JS objects just to showcase the examples*
+  - Upload the file to the website
+  - A table will load with all the data that you can change and filter with no code
 
 ## Authors
 
