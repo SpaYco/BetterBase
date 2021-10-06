@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# BetterBase
+A web page that can take JSON files (mainly from [MetaBase](https://metabase.com)), and render them in a table, where you can filter, sort, and do many other things without needing to fetch from the server again, or to write queries.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Built With
+- JavaScript
+- React
+- Redux/RTK
+- VSCode
+- [Ant Design](https://ant.design/)
 
-## Available Scripts
+# How to make changes
 
-In the project directory, you can run:
+- Clone this repo
+- Run `npm install` to install all required packages
+- Run `npm start` to run a dev server so you can see all changes you do live
+  - This is a React app, please check how to [get started](https://reactjs.org/docs/getting-started.html) to learn how you can work with this repo
+- Run `npm run build` to make a production build that would perform better and have less file size.
 
-### `npm start`
+# Live Link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Live Link](https://betterbase.netlify.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*You can use this live link to work with your JSON files without having to clone the repo*
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Why not use MetaBase's own features?
+MetaBase is great! it does help you go through data on a database and query what you need, but if you need to search through that query, you need to add even more queries, which makes it fetch the data again, it takes longer than it should, so just taking that data (by downloading a JSON file) and using it here will make it much simpler!
 
-### `npm run build`
+# Who Is this for?
+This would generally help those that are using data that they know isn't updating, and would want to filter/sort to get the information they need
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# How to use this?
+While this project focuses mainly on MetaBase, you can also use files generated elsewhere if they follow the right format!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Get your JSON file
+  - Download a JSON file from a MetaBase question
+  - Get a JSON file elsewhere that is an array of objects, that uses the same keys on all objects.
+    - Good ✅
+      ```js
+      [ 
+        {
+          "name": "Dude",
+          "age": 28,
+          "hobbies": null // since Guy have a "hobbies" key, Dude should also have one, if here's no data to add, we use null 
+        },
+        {
+          "name": "Guy",
+          "age": 25, 
+          "hobbies": "NPC" 
+        }
+      ]
+      ```
+      
+      ```js
+      [ 
+        {
+          "name": "Dude",
+          "age": 28
+        },
+        {
+          "name": "Guy",
+          "age": 25
+        }
+      ]
+      ```
+    - Bad ❌
+    
+      ```js
+      [ 
+        {
+          "name": "Dude",
+          "age": 28
+        },
+        {
+          "name": "Guy",
+          "age": 28,
+          "hobbies": "NPC" // there's a key that doesn't exist in the other object, it may work but you won't get all results.
+        }
+      ]
+      ```
+    
+      ```js
+      [ 
+        {
+          "name": "Dude",
+          "age": 28
+        },
+        [ // All elements of the main array should be objects.
+          {
+          "name": "Guy",
+          "age": 28,
+          }
+        ]
+      ]
+      ```
+      *P.S: You can't actually have comments on JSON, these are JS objects just to showcase the examples*
+  - Upload the file to the website
+  - A table will load with all the data that you can change and filter with no code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Authors
 
-### `npm run eject`
+👤 **SpaYco**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Github: [@SpaYco](https://github.com/SpaYco)
+- Twitter: [@iSpaYco](https://twitter.com/iSpaYco)
+- Linkedin: [Aziz Mejri](https://www.linkedin.com/in/spayco/)
+- Hackernoon: [@SpaYco](https://hackernoon.com/@SpaYco)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 🤝 Contributing
+Contributions, issues and feature requests are welcome!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Show your support
+Give a ⭐️ if you like this project!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+📝 License
 
-## Learn More
+This project is [GPL](./LICENSE) licensed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy!
